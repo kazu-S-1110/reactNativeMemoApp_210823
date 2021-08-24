@@ -6,8 +6,9 @@ import { Hello } from './src/components/Hello';
 export default function App() {
   return (
     <View style={styles.container}>
+      <Hello bang>World</Hello>
       <Text>Open up App.js to start working on your app!</Text>
-      <Hello>World</Hello>
+      {/* trueなものは省略することが可能bang={true} => bang */}
       <StatusBar style="auto" />
     </View>
   );
