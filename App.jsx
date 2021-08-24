@@ -7,6 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Hello bang>World</Hello>
+      <Hello style={{ fontSize: 16 }}>Tokyo</Hello>
       <Text>Open up App.js to start working on your app!</Text>
       {/* trueなものは省略することが可能bang={true} => bang */}
       <StatusBar style="auto" />
