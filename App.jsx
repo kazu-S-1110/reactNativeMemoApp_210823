@@ -1,16 +1,61 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Hello } from './src/components/Hello';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Hello bang>World</Hello>
-      <Hello style={{ fontSize: 16 }}>Tokyo</Hello>
-      <Text>Open up App.js to start working on your app!</Text>
-      {/* trueなものは省略することが可能bang={true} => bang */}
-      <StatusBar style="auto" />
+      <View>
+        <View>
+          <Text>Memo App</Text>
+          <Text>Log out</Text>
+        </View>
+      </View>
+
+      <View>
+        <View>
+          <View>
+            <Text>Buy list</Text>
+            <Text>2021.08.25</Text>
+          </View>
+          <View>
+            <Text>X</Text>
+          </View>
+        </View>
+
+        <View>
+          <View>
+            <Text>Buy list</Text>
+            <Text>2021.08.25</Text>
+          </View>
+          <View>
+            <Text>X</Text>
+          </View>
+        </View>
+
+        <View>
+          <View>
+            <Text>Buy list</Text>
+            <Text>2021.08.25</Text>
+          </View>
+          <View>
+            <Text>X</Text>
+          </View>
+        </View>
+
+        <View>
+          <View>
+            <Text>Buy list</Text>
+            <Text>2021.08.25</Text>
+          </View>
+          <View>
+            <Text>X</Text>
+          </View>
+        </View>
+      </View>
+
+      <View>
+        <Text>+</Text>
+      </View>
     </View>
   );
 }
