@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.appbar}>
-        <View style={styles.appbarInner}>
-          <Text style={styles.appbarTitle}>Memo App</Text>
-          <Text style={styles.appbarRight}>Log out</Text>
-        </View>
-      </View>
-
+    <Container>
+      <Appbar>
+        <AppbarInner>
+          <AppbarTitle>Memo App</AppbarTitle>
+          <AppbarRight>Log out</AppbarRight>
+        </AppbarInner>
+      </Appbar>
       <View>
         <View>
           <View>
@@ -56,35 +56,41 @@ export default function App() {
       <View>
         <Text>+</Text>
       </View>
-    </View>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eefffb',
-  },
-  appbar: {
-    width: '100%',
-    height: 104,
-    backgroundColor: '#a4c3f0',
-    justifyContent: 'flex-end',
-  },
   appbarInner: {
     alignItems: 'center',
   },
-  appbarRight: {
-    position: 'absolute',
-    color: 'rgba(255,255,255,0.8)',
-    right: 20,
-    bottom: 10,
-  },
-  appbarTitle: {
-    marginBottom: 8,
-    fontSize: 30,
-    fontWeight: '600',
-    lineHeight: 50,
-    color: 'white',
-  },
 });
+const AppbarTitle = styled.Text`
+  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 40;
+  color: white;
+`;
+const AppbarRight = styled.Text`
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  right: 20px;
+  bottom: 10px;
+`;
+
+const Appbar = styled.View`
+  width: 100%;
+  height: 104px;
+  background-color: #a4c3f0;
+  justify-content: flex-end;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  background-color: #eefffb;
+`;
+
+const AppbarInner = styled.View`
+  align-items: center;
+`;
