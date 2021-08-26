@@ -1,8 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Appbar } from '../components/Appbar'
 import { CircleButton } from '../components/CircleButton'
+import { Container } from '../components/Container'
 import { MemoList } from '../components/MemoList'
+
 
 export const MemoListScreen = () => {
   return (
@@ -14,7 +15,3 @@ export const MemoListScreen = () => {
   )
 }
 
-const Container = styled.View`
-  flex: 1;
-  background-color: #eefffb;
-`

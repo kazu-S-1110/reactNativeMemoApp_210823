@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const CircleButton = ({ children }) => {
+export const CircleButton = ({ children, style }) => {
   return (
-    <CircleButtonCon style={{
+    <CircleButtonCon style={[{
       shadowOpacity: 0.75,
       shadowRadius: 6,
       shadowColor: 'black',
       shadowOffset: { height: 2, width: 1 },
       elevation: 8
-    }}>
+    }, style]}>
       <CircleButtonLabel>{children}</CircleButtonLabel>
     </CircleButtonCon>)
 }
