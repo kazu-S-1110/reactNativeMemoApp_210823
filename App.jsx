@@ -1,21 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Appbar } from './src/components/Appbar'
-import { CircleButton } from './src/components/CircleButton'
-import { MemoList } from './src/components/MemoList'
+import { MemoListScreen } from './src/screens/MemoListScreen'
 
 export default function App() {
   return (
-    <Container>
-      <Appbar />
-      <MemoList />
-      <CircleButton>add</CircleButton>
-    </Container>
+    <MemoListScreen />
   )
 }
 
 
-const Container = styled.View`
-  flex: 1;
-  background-color: #eefffb;
-`
