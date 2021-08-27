@@ -11,9 +11,7 @@ export const MemoListScreen = () => {
     <Container>
       <Appbar />
       <MemoList />
-      <CircleButton>
-        <AntDesign name="plus" size={24} color="white" />
-      </CircleButton>
+      <CircleButton name="plus" />
     </Container>
   )
 }

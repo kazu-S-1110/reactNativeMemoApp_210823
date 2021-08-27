@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { AntDesign } from '@expo/vector-icons'
 
-export const CircleButton = ({ children, style }) => {
+
+export const CircleButton = ({ style, name }) => {
   return (
     <CircleButtonCon style={[{
       shadowOpacity: 0.75,
@@ -10,7 +12,9 @@ export const CircleButton = ({ children, style }) => {
       shadowOffset: { height: 2, width: 1 },
       elevation: 8
     }, style]}>
-      <CircleButtonLabel>{children}</CircleButtonLabel>
+      <CircleButtonLabel>
+        <AntDesign name={name} size={24} color="white" />
+      </CircleButtonLabel>
     </CircleButtonCon>)
 }
 

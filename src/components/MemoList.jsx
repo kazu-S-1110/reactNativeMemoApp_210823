@@ -1,6 +1,7 @@
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import styled from 'styled-components'
 import React from 'react'
+import { AntDesign } from '@expo/vector-icons'
 
 export const MemoList = () => {
   const items = ["task", "Buy", "make", "run"]
@@ -13,7 +14,7 @@ export const MemoList = () => {
             <MemoListItemDate>{"2021.08.25"}</MemoListItemDate>
           </View>
           <View>
-            <Text>X</Text>
+            <AntDesign name="delete" size={24} color="#b0b0b0" />
           </View>
         </MemoListItem>
       ))}
