@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { AntDesign } from '@expo/vector-icons'
 
 
-export const CircleButton = ({ style, name }) => {
+export const CircleButton = ({ style, name, onPress }) => {
   return (
     <CircleButtonCon style={[{
       shadowOpacity: 0.75,
@@ -11,7 +11,7 @@ export const CircleButton = ({ style, name }) => {
       shadowColor: 'black',
       shadowOffset: { height: 2, width: 1 },
       elevation: 8
-    }, style]}>
+    }, style]} onPress={onPress}>
       <CircleButtonLabel>
         <AntDesign name={name} size={24} color="white" />
       </CircleButtonLabel>
@@ -19,7 +19,7 @@ export const CircleButton = ({ style, name }) => {
 }
 
 
-const CircleButtonCon = styled.View`
+const CircleButtonCon = styled.TouchableOpacity`
   background-color: #467fd3;
   width: 64px;
   height: 64px;

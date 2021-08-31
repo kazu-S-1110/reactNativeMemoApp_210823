@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
@@ -14,7 +14,9 @@ export const MemoList = () => {
             <MemoListItemDate>{"2021.08.25"}</MemoListItemDate>
           </View>
           <View>
-            <AntDesign name="delete" size={24} color="#b0b0b0" />
+            <TouchableOpacity>
+              <AntDesign name="delete" size={24} color="#b0b0b0" />
+            </TouchableOpacity>
           </View>
         </MemoListItem>
       ))}
