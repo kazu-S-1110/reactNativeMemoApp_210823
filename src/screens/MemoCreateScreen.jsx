@@ -4,12 +4,13 @@ import { TextInput, View, StyleSheet } from 'react-native'
 import { CircleButton } from '../components/CircleButton'
 import KeyboardSafeView from '../components/KeyboardSafeView'
 
-export const MemoEditScreen = () => {
+export const MemoCreateScreen = () => {
   return (
-    <KeyboardSafeView enabled style={styles.container}>
+    <KeyboardSafeView enabled
+      style={styles.container}>
       <Appbar />
       <View style={styles.inputContainer} >
-        <TextInput value="買い物リスト" multiline style={styles.input} />
+        <TextInput value="" multiline style={styles.input} />
       </View>
       <CircleButton name="check" />
     </KeyboardSafeView>
