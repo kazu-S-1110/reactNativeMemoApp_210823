@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { LoginScreen } from './src/screens/LoginScreen'
 import { MemoCreateScreen } from './src/screens/MemoCreateScreen'
 import { MemoDetailScreen } from './src/screens/MemoDetailScreen'
 import { MemoEditScreen } from './src/screens/MemoEditScreen'
@@ -10,7 +11,8 @@ export default function App() {
     // <MemoListScreen />
     // <MemoDetailScreen />
     // <MemoEditScreen />
-    <MemoCreateScreen />
+    // <MemoCreateScreen />
+    <LoginScreen />
   )
 }
 
