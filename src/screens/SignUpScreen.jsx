@@ -3,18 +3,18 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 import { Appbar } from '../components/Appbar'
 import { SubmitButton } from '../components/Button'
 
-export const LoginScreen = () => {
+export const SignUpScreen = () => {
   return (
     <View style={styles.container}>
       <Appbar />
       <View style={styles.inner}>
-        <Text style={styles.title}>Log in</Text>
+        <Text style={styles.title}>Sign Up</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
         <SubmitButton label="Submit" />
         <View style={{ "flexDirection": "row" }}>
-          <Text style={styles.footerText}>Not registered?</Text>
-          <Text style={styles.footerLink}>Sign up here!</Text>
+          <Text style={styles.footerText}>Already registered?</Text>
+          <Text style={styles.footerLink}>Login!</Text>
         </View>
       </View>
     </View>
