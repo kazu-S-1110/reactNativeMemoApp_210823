@@ -19,7 +19,7 @@ export const MemoDetailScreen = () => {
           Fugiat ut reprehenderit minim voluptate aliqua non nulla aliqua amet ipsum. Aliquip non veniam et sunt cillum in ullamco consectetur laboris eiusmod consequat duis et cillum. Consequat est sint ex velit incididunt. Tempor velit excepteur veniam cupidatat id voluptate. Laboris pariatur ad reprehenderit est tempor eu elit anim dolor sunt amet commodo reprehenderit. Ex eiusmod in fugiat tempor culpa. Eiusmod do ex ullamco elit cillum proident enim velit tempor consectetur est do labore.
         </MemoText>
       </MemoBody>
-      <CircleButton style={{ top: 160, bottom: "auto" }} name="edit" />
+      <CircleButton style={{ top: 60, bottom: "auto" }} name="edit" />
 
     </Container >
   )

@@ -1,12 +1,10 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet, Alert, TouchableOpacity } from 'react-native'
-import { Appbar } from '../components/Appbar'
 import { SubmitButton } from '../components/Button'
 
 export const SignUpScreen = () => {
   return (
     <View style={styles.container}>
-      <Appbar />
       <View style={styles.inner}>
         <Text style={styles.title}>Sign Up</Text>
         <TextInput style={styles.input} value="Email Address" />

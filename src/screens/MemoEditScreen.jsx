@@ -1,5 +1,4 @@
 import React from 'react'
-import { Appbar } from '../components/Appbar'
 import { TextInput, View, StyleSheet, Alert } from 'react-native'
 import { CircleButton } from '../components/CircleButton'
 import KeyboardSafeView from '../components/KeyboardSafeView'
@@ -7,7 +6,6 @@ import KeyboardSafeView from '../components/KeyboardSafeView'
 export const MemoEditScreen = () => {
   return (
     <KeyboardSafeView enabled style={styles.container}>
-      <Appbar />
       <View style={styles.inputContainer} >
         <TextInput value="買い物リスト" multiline style={styles.input} />
       </View>
