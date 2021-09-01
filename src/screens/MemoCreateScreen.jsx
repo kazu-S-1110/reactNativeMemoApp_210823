@@ -28,6 +28,5 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlignVertical: "top",
     fontSize: 18,
-    lineHeight: 24
   }
 })

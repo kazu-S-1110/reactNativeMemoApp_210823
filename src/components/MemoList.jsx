@@ -1,23 +1,28 @@
-import { TouchableOpacity, View } from 'react-native'
+import { Alert, TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
-import { CircleButton } from './CircleButton'
+import { useNavigation } from '@react-navigation/native'
 
 export const MemoList = () => {
+  //app.jsxのstack.navigatorに記述してないコンポーネントでも画面遷移をするためにuseNavigationを使用する
+  const navigation = useNavigation()
   const items = ["task", "Buy", "make", "run"]
   return (
     <>
       {items.map((item) => (
         <MemoListItem>
-          <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("MemoDetail")}
+          >
             <MemoListItemTitle>{item}</MemoListItemTitle>
             <MemoListItemDate>{"2021.08.25"}</MemoListItemDate>
-          </View>
+          </TouchableOpacity>
           <View>
-            <TouchableOpacity>
+            <DeleteIcon
+              onPress={() => Alert.alert("Delete!")}>
               <AntDesign name="delete" size={24} color="#b0b0b0" />
-            </TouchableOpacity>
+            </DeleteIcon>
           </View>
         </MemoListItem>
       ))}
@@ -44,4 +49,7 @@ const MemoListItemDate = styled.Text`
   font-size: 15px;
   line-height: 16px;
   color: #848484;
+`
+const DeleteIcon = styled.TouchableOpacity`
+  padding: 10px;
 `

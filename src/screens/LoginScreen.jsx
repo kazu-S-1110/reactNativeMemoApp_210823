@@ -20,7 +20,14 @@ export const LoginScreen = ({ navigation }) => {
           }} />
         <View style={{ "flexDirection": "row" }}>
           <Text style={styles.footerText}>Not registered?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: "SignUp" }]
+              })
+            }}
+          >
             <Text style={styles.footerLink}>Sign up here!</Text>
           </TouchableOpacity>
         </View>

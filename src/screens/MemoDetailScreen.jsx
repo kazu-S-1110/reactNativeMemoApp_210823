@@ -36,13 +36,11 @@ const MemoHeader = styled.View`
 const MemoTitle = styled.Text`
   color: #ffffff;
   font-size: 32px;
-  line-height: 32;
   font-weight: 700;
 `
 const MemoDate = styled.Text`
   color: #ffffff;
   font-size: 12px;
-  line-height: 16;
 `
 
 const MemoBody = styled.ScrollView`
@@ -51,5 +49,4 @@ const MemoBody = styled.ScrollView`
 
 const MemoText = styled.Text`
   font-size: 16px;
-  line-height: 24;
 `
