@@ -14,11 +14,13 @@ const Stack = createNativeStackNavigator()
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MemoDetail"
+      <Stack.Navigator initialRouteName="MemoList"
         screenOptions={{
           headerStyle: { backgroundColor: "#467fd3" },
           headerTitleStyle: { color: "#fff", fontSize: 24 },
-          headerTitle: "Memo App"
+          headerTitle: "Memo App",
+          headerTintColor: "#fff", //戻るボタンの色を指定
+          headerBackTitle: "Back" //戻るボタンのタイトルを指定
         }}
       >
 
