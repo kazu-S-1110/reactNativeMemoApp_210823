@@ -2,14 +2,14 @@ import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import { SubmitButton } from '../components/Button'
 
-export const LoginScreen = () => {
+export const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
         <Text style={styles.title}>Log in</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
-        <SubmitButton label="Submit" />
+        <SubmitButton label="Submit" onPress={() => navigation.navigate("MemoList")} />
         <View style={{ "flexDirection": "row" }}>
           <Text style={styles.footerText}>Not registered?</Text>
           <TouchableOpacity>

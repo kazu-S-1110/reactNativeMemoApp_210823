@@ -3,7 +3,7 @@ import { TextInput, View, StyleSheet, Alert } from 'react-native'
 import { CircleButton } from '../components/CircleButton'
 import KeyboardSafeView from '../components/KeyboardSafeView'
 
-export const MemoEditScreen = () => {
+export const MemoEditScreen = ({ navigation }) => {
   return (
     <KeyboardSafeView enabled style={styles.container}>
       <View style={styles.inputContainer} >
@@ -11,6 +11,8 @@ export const MemoEditScreen = () => {
       </View>
       <CircleButton name="check" onPress={() => {
         Alert.alert("pressed!")
+        navigation.goBack()
+
       }} />
     </KeyboardSafeView>
   )

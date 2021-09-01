@@ -2,6 +2,7 @@ import { TouchableOpacity, View } from 'react-native'
 import styled from 'styled-components'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
+import { CircleButton } from './CircleButton'
 
 export const MemoList = () => {
   const items = ["task", "Buy", "make", "run"]

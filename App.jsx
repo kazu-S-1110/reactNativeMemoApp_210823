@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator()
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MemoList"
+      <Stack.Navigator initialRouteName="LogIn"
         screenOptions={{
           headerStyle: { backgroundColor: "#467fd3" },
           headerTitleStyle: { color: "#fff", fontSize: 24 },

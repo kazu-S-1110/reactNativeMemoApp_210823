@@ -6,12 +6,11 @@ import { MemoList } from '../components/MemoList'
 import { AntDesign } from '@expo/vector-icons'
 
 
-export const MemoListScreen = () => {
+export const MemoListScreen = ({ navigation }) => {
   return (
     <Container>
-      <Appbar />
       <MemoList />
-      <CircleButton name="plus" />
+      <CircleButton name="plus" onPress={() => navigation.navigate("MemoCreate")} />
     </Container>
   )
 }

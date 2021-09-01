@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TextInput, StyleSheet, Alert, TouchableOpacity } from 'react-native'
 import { SubmitButton } from '../components/Button'
 
-export const SignUpScreen = () => {
+export const SignUpScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
@@ -11,6 +11,7 @@ export const SignUpScreen = () => {
         <TextInput style={styles.input} value="Password" />
         <SubmitButton label="Submit" onPress={() => {
           Alert.alert("pressed!")
+          navigation.navigate("MemoList")
         }} />
         <View style={{ "flexDirection": "row" }}>
           <Text style={styles.footerText}>Already registered?</Text>
