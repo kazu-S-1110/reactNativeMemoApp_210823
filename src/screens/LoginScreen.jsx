@@ -9,7 +9,15 @@ export const LoginScreen = ({ navigation }) => {
         <Text style={styles.title}>Log in</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
-        <SubmitButton label="Submit" onPress={() => navigation.navigate("MemoList")} />
+        <SubmitButton
+          label="Submit"
+          onPress={() => {
+            //これまでの履歴をリセットして戻るボタンを表示しない記述
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "MemoList" }]
+            })
+          }} />
         <View style={{ "flexDirection": "row" }}>
           <Text style={styles.footerText}>Not registered?</Text>
           <TouchableOpacity>

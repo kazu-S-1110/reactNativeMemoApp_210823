@@ -11,7 +11,10 @@ export const SignUpScreen = ({ navigation }) => {
         <TextInput style={styles.input} value="Password" />
         <SubmitButton label="Submit" onPress={() => {
           Alert.alert("pressed!")
-          navigation.navigate("MemoList")
+          navigation.reset({
+            index: 0,
+            routes: [{ name: "MemoList" }]
+          })
         }} />
         <View style={{ "flexDirection": "row" }}>
           <Text style={styles.footerText}>Already registered?</Text>
