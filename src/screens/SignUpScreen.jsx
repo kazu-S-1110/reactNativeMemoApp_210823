@@ -12,11 +12,21 @@ export const SignUpScreen = ({ navigation }) => {
         <TextInput
           style={styles.input}
           value={email}
-          onChangeText={e => setEmail(e)} />
+          onChangeText={e => setEmail(e)}
+          autoCapitalize="none"
+          keyboardType="email-address"
+          placeholder="Email address"
+          textContentType="emailAddress"
+        />
+
         <TextInput
           style={styles.input}
           value={password}
           onChangeText={e => setPassword(e)}
+          autoCapitalize="none"
+          placeholder="Password"
+          secureTextEntry
+          textContentType="password"
         />
         <SubmitButton label="Submit" onPress={() => {
           Alert.alert("pressed!")
