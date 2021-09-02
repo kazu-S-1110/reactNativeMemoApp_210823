@@ -21,7 +21,9 @@ export default function App() {
           headerTitle: "Memo App",
           headerTintColor: "#fff", //戻るボタンの色を指定
           headerBackTitle: "Back", //戻るボタンのタイトルを指定
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS //これでAndroidの挙動をIOSにさせることができる。
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS, //これでAndroidの挙動をIOSにさせることができる。
+          gestureEnabled: true, //androidは標準でスワイプが無効になっているのでこれで有効にできる。
+          gestureDirection: "horizontal"
         }}
       >
 
