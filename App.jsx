@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack'
 
 import { LoginScreen } from './src/screens/LoginScreen'
 import { MemoCreateScreen } from './src/screens/MemoCreateScreen'
@@ -9,7 +9,7 @@ import { MemoEditScreen } from './src/screens/MemoEditScreen'
 import { MemoListScreen } from './src/screens/MemoListScreen'
 import { SignUpScreen } from './src/screens/SignUpScreen'
 
-const Stack = createNativeStackNavigator()
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
@@ -20,7 +20,8 @@ export default function App() {
           headerTitleStyle: { color: "#fff", fontSize: 24 },
           headerTitle: "Memo App",
           headerTintColor: "#fff", //戻るボタンの色を指定
-          headerBackTitle: "Back" //戻るボタンのタイトルを指定
+          headerBackTitle: "Back", //戻るボタンのタイトルを指定
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS //これでAndroidの挙動をIOSにさせることができる。
         }}
       >
 
