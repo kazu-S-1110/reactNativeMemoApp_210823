@@ -11,8 +11,17 @@ import { MemoListScreen } from './src/screens/MemoListScreen'
 import { SignUpScreen } from './src/screens/SignUpScreen'
 
 const Stack = createStackNavigator()
-
-
+const firebaseConfig = {
+  apikey: APIKEY,
+  authDomain: AUTHDOMAIN,
+  projectId: PROJECTID,
+  storageBucket: STORAGEBUCKET,
+  messageSenderId: MESSAGINGSENDERID,
+  appId: APPID
+}
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig)
+}
 
 
 export default function App() {
