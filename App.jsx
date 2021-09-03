@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack'
-
+import firebase from 'firebase'
+import { APIKEY, AUTHDOMAIN, PROJECTID, STORAGEBUCKET, MESSAGINGSENDERID, APPID } from '@env'
 import { LoginScreen } from './src/screens/LoginScreen'
 import { MemoCreateScreen } from './src/screens/MemoCreateScreen'
 import { MemoDetailScreen } from './src/screens/MemoDetailScreen'
@@ -10,6 +11,9 @@ import { MemoListScreen } from './src/screens/MemoListScreen'
 import { SignUpScreen } from './src/screens/SignUpScreen'
 
 const Stack = createStackNavigator()
+
+
+
 
 export default function App() {
   return (
@@ -26,7 +30,6 @@ export default function App() {
           gestureDirection: "horizontal"
         }}
       >
-
         <Stack.Screen name="MemoList" component={MemoListScreen} />
         <Stack.Screen name="MemoDetail" component={MemoDetailScreen} />
         <Stack.Screen name="MemoEdit" component={MemoEditScreen} />
