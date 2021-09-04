@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import { SubmitButton } from '../components/Button'
 import firebase from 'firebase'
@@ -6,6 +6,19 @@ import firebase from 'firebase'
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+  useEffect(() => {
+    //もしユーザがログインしていればMemoListに遷移させる処理
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (user) { //ユーザが存在したら
+        navigation.reset({
+          index: 0,
+          routes: [{ name: "MemoList" }]
+        })
+      }
+    })
+    return unsubscribe //useEffect内のreturn文はこの画面が離れる場合に実行される処理。監視はこの画面から離れたら中断させる。
+  }, [])
 
   const handleLogin = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
