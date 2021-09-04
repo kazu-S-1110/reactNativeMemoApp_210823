@@ -1,11 +1,26 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import { SubmitButton } from '../components/Button'
-
+import firebase from 'firebase'
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+  const handleLogin = () => {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(({ user }) => {
+        console.log(user.uid)
+        navigation.reset({
+          index: 0,
+          routes: [{ name: "MemoList" }]
+        })
+      }).catch((err) => {
+        console.log(err.code)
+        Alert.alert(err.message)
+      })
+    //これまでの履歴をリセットして戻るボタンを表示しない記述
+  }
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
@@ -30,13 +45,7 @@ export const LoginScreen = ({ navigation }) => {
         />
         <SubmitButton
           label="Submit"
-          onPress={() => {
-            //これまでの履歴をリセットして戻るボタンを表示しない記述
-            navigation.reset({
-              index: 0,
-              routes: [{ name: "MemoList" }]
-            })
-          }} />
+          onPress={handleLogin} />
         <View style={{ "flexDirection": "row" }}>
           <Text style={styles.footerText}>Not registered?</Text>
           <TouchableOpacity
