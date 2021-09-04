@@ -10,13 +10,17 @@ export const SignUpScreen = ({ navigation }) => {
   const handlePress = () => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        // console.log(user.uid)
-        Alert.alert(user.uid)
+        console.log(user.uid)
+        // Alert.alert(user.uid)
+        navigation.reset({
+          index: 0,
+          routes: [{ name: "MemoList" }]
+        })
       })
-    navigation.reset({
-      index: 0,
-      routes: [{ name: "MemoList" }]
-    })
+      .catch(err => {
+        console.log(err.code)
+        Alert.alert(err.message)
+      })
   }
 
   return (
