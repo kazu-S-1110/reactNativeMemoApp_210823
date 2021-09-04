@@ -2,7 +2,14 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack'
 import firebase from 'firebase'
-import { APIKEY, AUTHDOMAIN, PROJECTID, STORAGEBUCKET, MESSAGINGSENDERID, APPID } from '@env'
+import {
+  FIREBASE_APIKEY,
+  FIREBASE_PROJECTID,
+  FIREBASE_AUTHDOMAIN,
+  FIREBASE_STORAGEBUCKET,
+  FIREBASE_MESSAGINGSENDERID,
+  FIREBASE_APPID
+} from '@env'
 import { LoginScreen } from './src/screens/LoginScreen'
 import { MemoCreateScreen } from './src/screens/MemoCreateScreen'
 import { MemoDetailScreen } from './src/screens/MemoDetailScreen'
@@ -12,13 +19,15 @@ import { SignUpScreen } from './src/screens/SignUpScreen'
 
 const Stack = createStackNavigator()
 const firebaseConfig = {
-  apikey: APIKEY,
-  authDomain: AUTHDOMAIN,
-  projectId: PROJECTID,
-  storageBucket: STORAGEBUCKET,
-  messageSenderId: MESSAGINGSENDERID,
-  appId: APPID
+  apiKey: FIREBASE_APIKEY,
+  authDomain: FIREBASE_AUTHDOMAIN,
+  projectId: FIREBASE_PROJECTID,
+  storageBucket: FIREBASE_STORAGEBUCKET,
+  messagingSenderId: FIREBASE_MESSAGINGSENDERID,
+  appId: FIREBASE_APPID
 }
+
+
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig)
 }

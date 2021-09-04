@@ -11,7 +11,7 @@ export const MemoList = () => {
   return (
     <>
       {items.map((item) => (
-        <MemoListItem>
+        <MemoListItem key={item}>
           <TouchableOpacity
             onPress={() => navigation.navigate("MemoDetail")}
           >
