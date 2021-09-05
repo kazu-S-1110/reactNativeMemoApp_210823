@@ -17,7 +17,6 @@ import { MemoEditScreen } from './src/screens/MemoEditScreen'
 import { MemoListScreen } from './src/screens/MemoListScreen'
 import { SignUpScreen } from './src/screens/SignUpScreen'
 
-const Stack = createStackNavigator()
 const firebaseConfig = {
   apiKey: FIREBASE_APIKEY,
   authDomain: FIREBASE_AUTHDOMAIN,
@@ -26,11 +25,14 @@ const firebaseConfig = {
   messagingSenderId: FIREBASE_MESSAGINGSENDERID,
   appId: FIREBASE_APPID
 }
-
-
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig)
 }
+
+require('firebase/firestore/')
+
+
+const Stack = createStackNavigator()
 
 
 export default function App() {
