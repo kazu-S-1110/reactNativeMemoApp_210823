@@ -1,22 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TextInput, View, StyleSheet } from 'react-native'
 import { CircleButton } from '../components/CircleButton'
 import KeyboardSafeView from '../components/KeyboardSafeView'
 import firebase from 'firebase'
 
 export const MemoCreateScreen = ({ navigation }) => {
+  const [bodyText, setBodyText] = useState("")
+
   const handlePress = () => {
     const { currentUser } = firebase.auth() //現在のユーザ情報を取得する
     const db = firebase.firestore()
     const ref = db.collection(`users/${currentUser.uid}/memos`)//ユーザごとにmemosというコレクションの参照先を作成
     ref.add({
-      bodyText: "hello"
+      bodyText //keyとValueが同じならまとめる！
     }).then((docRef) => { //docRefは作成されたデータへの参照が渡ってくる
       console.log("Created!", docRef.id)
       navigation.goBack()
     }
     ).catch(err => console.log(err))
-
   }
 
 
@@ -24,7 +25,13 @@ export const MemoCreateScreen = ({ navigation }) => {
     <KeyboardSafeView enabled
       style={styles.container}>
       <View style={styles.inputContainer} >
-        <TextInput value="" multiline style={styles.input} />
+        <TextInput
+          placeholder="Input your memos!"
+          value={bodyText}
+          multiline
+          style={styles.input}
+          onChangeText={(e => setBodyText(e))}
+        />
       </View>
       <CircleButton name="check" onPress={handlePress} />
     </KeyboardSafeView>
