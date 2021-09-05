@@ -6,8 +6,9 @@ import firebase from 'firebase'
 
 export const MemoCreateScreen = ({ navigation }) => {
   const handlePress = () => {
+    const { currentUser } = firebase.auth() //現在のユーザ情報を取得する
     const db = firebase.firestore()
-    const ref = db.collection("memos") //memosというコレクションの参照先を作成
+    const ref = db.collection(`users/${currentUser.uid}/memos`)//ユーザごとにmemosというコレクションの参照先を作成
     ref.add({
       bodyText: "hello"
     }).then((docRef) => { //docRefは作成されたデータへの参照が渡ってくる
