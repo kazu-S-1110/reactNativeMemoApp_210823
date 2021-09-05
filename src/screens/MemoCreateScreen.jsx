@@ -12,7 +12,9 @@ export const MemoCreateScreen = ({ navigation }) => {
     const db = firebase.firestore()
     const ref = db.collection(`users/${currentUser.uid}/memos`)//ユーザごとにmemosというコレクションの参照先を作成
     ref.add({
-      bodyText //keyとValueが同じならまとめる！
+      bodyText, //keyとValueが同じならまとめる！
+      created_at: new Date(),
+      updated_at: new Date() //更新時間も定義。 
     }).then((docRef) => { //docRefは作成されたデータへの参照が渡ってくる
       console.log("Created!", docRef.id)
       navigation.goBack()
@@ -31,6 +33,7 @@ export const MemoCreateScreen = ({ navigation }) => {
           multiline
           style={styles.input}
           onChangeText={(e => setBodyText(e))}
+          autoFocus
         />
       </View>
       <CircleButton name="check" onPress={handlePress} />
